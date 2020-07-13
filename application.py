@@ -5,8 +5,11 @@ from flask import Flask, render_template, request
 
 background_names = os.listdir(os.path.join(os.getcwd(), "static/backgrounds"))
 
-# Put the api key that you get in http://openweathermap.org
-APPID = os.env["openweather_appid"]
+try:
+    # Put the api key that you get in http://openweathermap.org
+    APPID = os.environ["openweather_appid"]
+except:
+    Exception("Make sure you've set the required environment variables")
 
 def get_location(ip):
     ip_location = requests.get(f"http://ip-api.com/json/{ip}").json()
