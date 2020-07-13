@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(117, 37, 37, 0.5), rgba(255, 255, 255, 0.5)),
+            url("static/backgrounds/{{ background }}");
+        }
+    </style>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="get-information">
+                <form action="{{ url_for('index') }}" method="GET" class="form-inline">
+                    <input type="text" name="city" class="form-control" placeholder="City">
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="radio-inline"><input type="radio" id="units" name="units" value="metric"
+                            checked>Metric</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="radio-inline"><input type="radio" id="units" name="units"
+                            value="imperial">Imperial</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary">Look up</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <span>(Default location is based on your IP address)</span>
+                </form>
+            </div>
+        </header>
+
+        <main>
+            <div class="show-information">
+                {% block information %}{% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                {% block footer %}{% endblock %}
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

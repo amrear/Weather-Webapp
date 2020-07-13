@@ -1,0 +1,60 @@
+body {
+    min-height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.get-information {
+    margin-top: 5px;
+    height: 35px;
+}
+
+.form-control {
+    height: 30px;
+}
+
+.btn {
+    height: 30px;
+    padding: 0 15px;
+}
+
+.show-information {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.current-location {
+    font-size: 18px;
+    text-align: left;
+}
+
+.main-temp-wrapper {
+    width: 550px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.not-found-messege {
+    font-size: 90px;
+    text-align: center;
+    margin-top: 30vh;
+}
+.not-found-messege{
+    font-size: 90px;
+    text-align: center;
+    margin-top: 30vh;
+}
+footer {   
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+}
+.extra-information{
+    width: 100%;
+}
+.ex-info-col{
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block information %}
+<div class="main-temp-wrapper">
+	<div class="current-location">
+		Current weather in {{ city }}:
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			temp:<span style="font-size: 130px;">{{ data.temp }}</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			min temp: {{ data.temp_min }}
+		</div>
+		<div class="col-sm-6">
+			max temp: {{ data.temp_max }}
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+<div class="extra-information">
+	<div class="row">
+		<div class="col-sm-4 ex-info-col">
+			<p>Description: {{ data.description }}</p>
+		</div>
+		<div class="col-sm-4 ex-info-col">
+			<p>Pressure: {{ data.pressure }}</p>
+		</div>
+		<div class="col-sm-4 ex-info-col">
+			<p>Humidity: {{ data.humidity }}</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 ex-info-col">
+			<p>Visibility: {{ data.visibility }}</p>
+		</div>
+		<div class="col-sm-6 ex-info-col">
+			<p>Wind Speed: {{ data.wind_speed }}</p>
+		</div>
+
+	</div>
+
+	{% endblock %}
